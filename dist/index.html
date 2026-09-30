@@ -1,38 +1,44 @@
 <!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#191919"><meta name="description" content="AI Аналитик 1.4. Внутренняя презентация: более простой путь от первого входа до рабочего результата.">
-<title>AI Аналитик · Обновление 1.4</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23191919'/%3E%3Cpath d='M8 23V16M16 23V10M24 23V6' stroke='%23d96a1b' stroke-width='4'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script>
-</head>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#191919">
+<meta name="description" content="AI Аналитик 1.4: убираем лишние действия на пути от первого входа до результата."><title>AI Аналитик 1.4 — убираем всё лишнее</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23191919'/%3E%3Cpath d='M8 16h16' stroke='%23d96a1b' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./style.css?v=less-actions"><script src="./app.js?v=less-actions" defer></script></head>
 <body>
 <header><a class="brand" href="#slide-1" aria-label="К началу презентации"><img src="./assets/iq-group-logo.png" alt="IQ Group" width="216" height="55"></a><span>AI Аналитик <b>1.4</b></span></header>
 <main id="deck" aria-label="Внутренняя презентация обновления 1.4">
 <section class="slide cover active" id="slide-1" aria-labelledby="title-1">
-<div class="cover-copy"><p class="eyebrow">Обновление 1.4 / Для руководства</p><h1 id="title-1" tabindex="-1">Меньше шагов.<br>Ближе к <em>результату.</em></h1><p class="lead">Упрощаем путь пользователя<br>от первого входа до результата, с которым можно работать.</p></div>
-<div class="cover-diagram" role="img" aria-label="Прямой путь от входа через анализ к рабочему результату"><div class="route-label">ПОЛЬЗОВАТЕЛЬСКИЙ ПУТЬ</div><div class="route-start">Вход</div><div class="route-line"><span></span><span></span><span></span></div><div class="result-node"><div class="mini-bars"><i></i><i></i><i></i><i></i></div><span>Рабочий<br>результат</span></div><div class="cover-version">1.4</div><div class="route-caption">Проще начать. Легче разобраться. Понятнее действовать.</div></div>
+<p class="eyebrow">Обновление 1.4 / Для руководства</p>
+<h1 id="title-1" tabindex="-1">Убираем<br><em>всё лишнее.</em></h1>
+<p class="cover-thesis">Меньше действий от первого входа до результата.</p>
+<div class="cover-bottom"><div class="short-route"><span>Вход</span><i aria-hidden="true"></i><span>Результат</span></div><span class="cover-note">В этом суть обновления.</span></div>
 </section>
-<section class="slide" id="slide-2" aria-labelledby="title-2" hidden>
-<p class="eyebrow">01 / Суть обновления</p><h2 id="title-2" tabindex="-1">Убираем лишние действия<br><em>до первого результата.</em></h2>
-<div class="value-route" aria-label="От первого входа в Аналитик до понятного отчёта">
-<article class="value-endpoint"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M15 5h11v22H15M5 16h14m-5-5 5 5-5 5"/></svg></span><h3>Первый вход<br>в Аналитик</h3></article>
-<div class="value-link"><span class="value-link-label">Упрощаем путь</span><div class="value-link-line" aria-hidden="true"><i></i><b>1.4</b><i></i></div></div>
-<article class="value-endpoint value-result"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 5h13l6 6v16H7zM20 5v6h6M12 22v-4m5 4v-7m5 7v-5"/></svg></span><h3>Понятный отчёт,<br>с которым можно работать</h3></article>
+<section class="slide principle" id="slide-2" aria-labelledby="title-2" hidden>
+<p class="eyebrow">01 / Как упрощаем</p>
+<h2 id="title-2" tabindex="-1">Нужные действия оставляем.<br><em>Лишние — убираем.</em></h2>
+<div class="route-demo" id="route-demo">
+<div class="demo-endpoints"><span>Первый вход</span><span>Результат</span></div>
+<div class="route-drawing" role="img" aria-label="Длинный путь с лишними кликами, переходами и настройками превращается в прямой путь к результату">
+<svg class="route-svg" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
+<path class="detour-path" d="M12 160H150Q170 160 170 140V65Q170 45 190 45H310Q330 45 330 65V255Q330 275 350 275H460Q480 275 480 255V65Q480 45 500 45H640Q660 45 660 65V255Q660 275 680 275H800Q820 275 820 255V180Q820 160 840 160H988"/>
+<path class="direct-path" pathLength="1" d="M12 160H988"/>
+<circle class="endpoint" cx="12" cy="160" r="6"/><circle class="endpoint" cx="988" cy="160" r="6"/>
+</svg>
+<span class="detour-tag detour-one">Лишний клик</span><span class="detour-tag detour-two">Лишний переход</span><span class="detour-tag detour-three">Лишняя настройка</span>
+<span class="direct-label">Только нужные действия</span>
 </div>
-<div class="less-work"><span class="label">Что сокращаем</span><div><span>Поиск нужного раздела</span><span>Лишние настройки</span><span>Переходы между страницами</span></div></div>
-<p class="takeaway">Пользователь быстрее решает свою задачу — меньше разбирается в интерфейсе.</p>
+<div class="demo-controls"><p id="route-status" aria-live="polite">Так сокращаем путь пользователя.</p><button id="simplify" type="button">Убрать лишнее</button></div>
+</div>
+<p class="takeaway">Если действие не помогает получить результат — убираем его.</p>
 </section>
 <section class="slide" id="slide-3" aria-labelledby="title-3" hidden>
-<p class="eyebrow">02 / Состав обновления</p><h2 id="title-3" tabindex="-1">Перерабатываем<br><em>ключевые страницы.</em></h2>
+<p class="eyebrow">02 / Что меняем</p><h2 id="title-3" tabindex="-1">Убираем лишнее<br><em>на всех этих страницах.</em></h2>
 <div class="page-list" aria-label="Перерабатываемые страницы"><div><span>01</span>Главная</div><div><span>02</span>Настройки</div><div><span>03</span>Базы знаний</div><div><span>04</span>Шаблоны</div><div><span>05</span>Документы</div><div><span>06</span>Отчёты</div><div><span>07</span>Сотрудники</div></div>
-<div class="new-pages"><span class="label orange">Новые страницы</span><b>Помощь</b><b>Предложить идею</b></div>
-<p class="takeaway">Общий фокус — упростить путь до рабочего результата.</p>
+<div class="new-pages"><span>Добавляем</span><b>Помощь</b><b>Предложить идею</b></div>
 </section>
 <section class="slide closing" id="slide-4" aria-labelledby="title-4" hidden>
-<p class="eyebrow">AI Аналитик / 1.4</p><h2 id="title-4" tabindex="-1">Легко войти.<br>Просто разобраться.<br><em>Начать работать.</em></h2>
-<div class="closing-route"><span>Первый вход</span><i></i><span>Рабочий результат</span></div><p class="closing-thesis">Главная цель 1.4 — сократить путь до ценности продукта.</p>
+<p class="eyebrow">Цель обновления 1.4</p><h2 id="title-4" tabindex="-1">Зашёл.<br>Сделал задачу.<br><em>Получил результат.</em></h2>
+<p class="closing-thesis">С минимумом действий между этими шагами.</p>
 </section>
 </main>
 <footer><span class="counter" id="counter">01 / 04</span><nav class="dots" aria-label="Выбор слайда"></nav><div class="controls"><button id="fullscreen" aria-label="Полноэкранный режим"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button><button id="prev" aria-label="Предыдущий слайд" disabled><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></button><button id="next" aria-label="Следующий слайд"><svg viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></svg></button></div><div class="progress-track"><div id="progress"></div></div></footer>
