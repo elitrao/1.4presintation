@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#191919">
 <meta name="description" content="AI Аналитик 1.4: убираем лишние действия на пути от первого входа до результата."><title>AI Аналитик 1.4 — убираем всё лишнее</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23191919'/%3E%3Cpath d='M8 16h16' stroke='%23d96a1b' stroke-width='4'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="./style.css?v=less-actions"><script src="./app.js?v=less-actions" defer></script></head>
+<link rel="stylesheet" href="./style.css?v=slow-route"><script src="./app.js?v=slow-route" defer></script></head>
 <body>
 <header><a class="brand" href="#slide-1" aria-label="К началу презентации"><img src="./assets/iq-group-logo.png" alt="IQ Group" width="216" height="55"></a><span>AI Аналитик <b>1.4</b></span></header>
 <main id="deck" aria-label="Внутренняя презентация обновления 1.4">
@@ -21,9 +21,9 @@
 <div class="route-drawing" role="img" aria-label="Длинный путь с лишними кликами, переходами и настройками превращается в прямой путь к результату">
 <svg class="route-svg" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
 <path class="detour-path" d="M12 160H150Q170 160 170 140V65Q170 45 190 45H310Q330 45 330 65V255Q330 275 350 275H460Q480 275 480 255V65Q480 45 500 45H640Q660 45 660 65V255Q660 275 680 275H800Q820 275 820 255V180Q820 160 840 160H988"/>
-<path class="direct-path" pathLength="1" d="M12 160H988"/>
 <circle class="endpoint" cx="12" cy="160" r="6"/><circle class="endpoint" cx="988" cy="160" r="6"/>
 </svg>
+<svg class="route-svg direct-route" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true"><path class="direct-path" d="M12 160H988"/></svg>
 <span class="detour-tag detour-one">Лишний клик</span><span class="detour-tag detour-two">Лишний переход</span><span class="detour-tag detour-three">Лишняя настройка</span>
 <span class="direct-label">Только нужные действия</span>
 </div>

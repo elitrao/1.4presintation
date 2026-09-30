@@ -9,8 +9,32 @@ let current=fromHash();
 const routeDemo=document.getElementById('route-demo'),simplifyButton=document.getElementById('simplify');
 let routeTimers=[];
 function clearRouteTimers(){routeTimers.forEach(clearTimeout);routeTimers=[];}
-function simplifyRoute(){clearRouteTimers();routeDemo.classList.add('removing');routeTimers.push(setTimeout(()=>{routeDemo.classList.add('simplified');simplifyButton.textContent='Показать ещё раз';document.getElementById('route-status').textContent='Меньше действий до результата.';},reduced.matches?0:450));}
-function resetRoute(auto=false){clearRouteTimers();routeDemo.classList.remove('removing','simplified');simplifyButton.textContent='Убрать лишнее';document.getElementById('route-status').textContent='Так сокращаем путь пользователя.';if(auto){if(reduced.matches)simplifyRoute();else routeTimers.push(setTimeout(simplifyRoute,2200));}}
+function simplifyRoute(){
+  if(simplifyButton.disabled)return;
+  clearRouteTimers();
+  simplifyButton.disabled=true;
+  routeDemo.classList.add('removing');
+  // 3 seconds per strike, staggered by 0.9 seconds, plus 1.5 seconds to read.
+  routeTimers.push(setTimeout(()=>{
+    routeDemo.classList.add('simplified');
+    routeTimers.push(setTimeout(()=>{
+      simplifyButton.disabled=false;
+      simplifyButton.textContent='Показать ещё раз';
+      document.getElementById('route-status').textContent='Меньше действий до результата.';
+    },reduced.matches?0:4800));
+  },reduced.matches?0:6300));
+}
+function resetRoute(auto=false){
+  clearRouteTimers();
+  routeDemo.classList.add('resetting');
+  routeDemo.classList.remove('removing','simplified');
+  void routeDemo.offsetWidth;
+  routeDemo.classList.remove('resetting');
+  simplifyButton.disabled=false;
+  simplifyButton.textContent='Убрать лишнее';
+  document.getElementById('route-status').textContent='Так сокращаем путь пользователя.';
+  if(auto){if(reduced.matches)simplifyRoute();else routeTimers.push(setTimeout(simplifyRoute,5000));}
+}
 simplifyButton.addEventListener('click',()=>routeDemo.classList.contains('simplified')?resetRoute(true):simplifyRoute());
 const dots=slides.map((slide,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`${i+1}. ${chapters[i]}`);b.addEventListener('click',()=>go(i));document.querySelector('.dots').append(b);return b;});
 function update(){slides.forEach((s,i)=>{s.hidden=i!==current;s.inert=i!==current;s.classList.toggle('active',i===current);});dots.forEach((b,i)=>b.setAttribute('aria-current',i===current?'true':'false'));prev.disabled=current===0;next.disabled=current===slides.length-1;document.getElementById('counter').textContent=`${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;document.getElementById('progress').style.width=`${(current+1)/slides.length*100}%`;}
