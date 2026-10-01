@@ -101,3 +101,25 @@ prev.addEventListener('click',()=>go(current-1));next.addEventListener('click',(
 window.addEventListener('hashchange',()=>go(fromHash(),false));window.addEventListener('popstate',()=>go(fromHash(),false));
 window.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.target.closest('input,textarea,select,[contenteditable=true]'))return;if(e.target.closest('button,a')&&[' ','Enter'].includes(e.key))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(current+1);}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(current-1);}else if(e.key==='Home'){e.preventDefault();go(0);}else if(e.key==='End'){e.preventDefault();go(slides.length-1);}});
 document.getElementById('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{}});
+
+// Connect each phrase to the result using its rendered text width.
+const closingLayout=document.querySelector('.closing-layout');
+function syncClosingConnectors(){
+  if(closingLayout.closest('.slide').hidden)return;
+  const box=closingLayout.getBoundingClientRect();
+  const core=closingLayout.querySelector('.finish-core').getBoundingClientRect();
+  const lines=closingLayout.querySelectorAll('.closing-connectors path');
+  const dots=closingLayout.querySelectorAll('.closing-connectors circle');
+  const svg=closingLayout.querySelector('.closing-connectors');
+  svg.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`);
+  const endX=core.left-box.left,endY=core.top+core.height/2-box.top;
+  closingLayout.querySelectorAll('.closing-step').forEach((step,i)=>{
+    const text=step.getBoundingClientRect();
+    const x=text.right-box.left+12,y=text.top+text.height/2-box.top;
+    const bend=Math.max(x+8,endX-100);
+    lines[i].setAttribute('d',`M${x} ${y}H${bend}C${bend+35} ${y} ${endX-45} ${endY} ${endX} ${endY}`);
+    dots[i].setAttribute('cx',x);dots[i].setAttribute('cy',y);
+  });
+}
+new ResizeObserver(syncClosingConnectors).observe(closingLayout);
+document.fonts.ready.then(syncClosingConnectors);
