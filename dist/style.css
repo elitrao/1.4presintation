@@ -106,6 +106,6 @@ footer{position:fixed;z-index:5;bottom:0;left:0;width:100%;height:80px;display:f
 @media(max-width:760px){.cover-logo-field img{width:calc(var(--size)*.65);opacity:calc(var(--alpha)*.55)}.cover-logo-field img:nth-child(6),.cover-logo-field img:nth-child(7),.cover-logo-field img:nth-child(8),.cover-logo-field img:nth-child(15){display:none}}
 @media(prefers-reduced-motion:reduce){.cover-logo-field{transform:none}.cover-logo-field img{animation:none}}
 
-.cover .cover-version,.closing .cover-version{padding:8px 15px;border-radius:10px;color:#fff5e6;background:radial-gradient(ellipse at 90% 0,#ffc05a55,transparent 65%),linear-gradient(115deg,#a7352c 0%,#b9491e 48%,#99520f 100%);border:1px solid #ffb36b99;box-shadow:inset 0 1px 0 #ffe2af40,0 5px 20px #e85a2026,0 0 36px #ff8a181a;text-shadow:0 1px 2px #65220d55;letter-spacing:.06em}
+.cover .cover-version,.closing .cover-version{padding:8px 15px;border-radius:10px;color:#f3dfbf;background:radial-gradient(ellipse at 90% 0,#d6ad6720,transparent 65%),linear-gradient(115deg,#393127 0%,#51402b 48%,#70522e 100%);border:1px solid #b18c565c;box-shadow:inset 0 1px 0 #ffe2af12,0 5px 20px #00000020,0 0 28px #bd8f3710;text-shadow:none;letter-spacing:.06em}
 
 .closing-layout{position:relative;z-index:1}
