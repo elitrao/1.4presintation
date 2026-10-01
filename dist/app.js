@@ -1,4 +1,13 @@
 'use strict';
+const siteLoader=document.querySelector('.site-loader');
+const loaderStarted=performance.now();
+window.addEventListener('load',()=>{
+  const minimumDelay=Math.max(0,1900-(performance.now()-loaderStarted));
+  setTimeout(()=>{
+    siteLoader?.classList.add('is-hidden');
+    setTimeout(()=>siteLoader?.remove(),900);
+  },minimumDelay);
+});
 const slides=[...document.querySelectorAll('.slide')];
 const chapters=['Убираем всё лишнее','Зачем обновление','Нужное оставляем','Примеры понятного пути','Список страниц','Цель обновления'];
 const prev=document.getElementById('prev'),next=document.getElementById('next');
