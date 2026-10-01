@@ -74,6 +74,10 @@ footer{position:fixed;z-index:5;bottom:0;left:0;width:100%;height:80px;display:f
 @media(max-width:1000px){.cover-visual{width:92%}@keyframes cover-drift{0%,100%{transform:translateX(-10%) translateY(-3px)}50%{transform:translateX(-10%) translateY(4px)}}}
 @media(max-width:760px){.cover-visual{width:min(92%,420px);justify-self:center}@keyframes cover-drift{0%,100%{transform:translateX(-8%) translateY(-2px)}50%{transform:translateX(-8%) translateY(3px)}}}
 @media(prefers-reduced-motion:reduce){.cover-visual{transform:none}.cover-visual img{animation:none}}
+.cover-visual.cover-logo{width:80%;max-width:520px;justify-self:center;margin:0}.cover-logo:before{inset:5%;background:#d96a1b0c}.cover-logo img{width:100%;transform:none;animation:logo-drift 5.5s ease-in-out infinite;filter:drop-shadow(0 20px 30px #0004)}
+@keyframes logo-drift{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
+@media(max-width:760px){.cover-visual.cover-logo{width:72%;max-width:320px;margin:24px auto}}
+@media(prefers-reduced-motion:reduce){.cover-logo img{animation:none}}
 
 .scope h2{font-size:clamp(34px,3.7vw,64px)}
 .journey-pages li{display:flex;align-items:center;gap:9px;white-space:nowrap}.journey-pages svg{width:18px;height:18px;flex-shrink:0;fill:none;stroke:var(--bright);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
