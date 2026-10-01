@@ -68,7 +68,7 @@ footer{position:fixed;z-index:5;bottom:0;left:0;width:100%;height:80px;display:f
 @media(max-width:1000px){.cover-visual img{width:118%;transform:translateX(-10%)}}
 @media(max-width:760px){.cover-visual img{width:116%;transform:translateX(-8%)}.cover-entry{left:-1%;bottom:32%}.cover-result{right:-1%;top:16%}}
 
-.cover-thesis{display:flex;flex-wrap:wrap;gap:4px 14px}.cover-thesis strong{color:#f1f1f1;font-weight:500}.cover-visual{width:88%;justify-self:end;transform:translate3d(var(--float-x,0),var(--float-y,0),0) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));transform-style:preserve-3d;will-change:transform}
+.cover h1{font-size:clamp(56px,5.6vw,96px)}.cover-visual{width:88%;justify-self:end;transform:translate3d(var(--float-x,0),var(--float-y,0),0) rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));transform-style:preserve-3d;will-change:transform}
 .cover-visual img{animation:cover-drift 5.5s ease-in-out infinite}
 @keyframes cover-drift{0%,100%{transform:translateX(-7%) translateY(-4px)}50%{transform:translateX(-7%) translateY(5px)}}
 @media(max-width:1000px){.cover-visual{width:92%}@keyframes cover-drift{0%,100%{transform:translateX(-10%) translateY(-3px)}50%{transform:translateX(-10%) translateY(4px)}}}
