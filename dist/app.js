@@ -1,6 +1,6 @@
 'use strict';
 const slides=[...document.querySelectorAll('.slide')];
-const chapters=['Меньше кликов. Больше дела.','Хватит разбираться','Нужное оставили','Инструкция не нужна','Лишнее — на выход','Зашёл. Сделал. Готово.'];
+const chapters=['Убираем всё лишнее','Зачем обновление','Нужное оставляем','Примеры понятного пути','Список страниц','Цель обновления'];
 const prev=document.getElementById('prev'),next=document.getElementById('next');
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 const clamp=n=>Math.max(0,Math.min(slides.length-1,n));
