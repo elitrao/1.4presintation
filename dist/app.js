@@ -7,7 +7,7 @@ const clamp=n=>Math.max(0,Math.min(slides.length-1,n));
 const fromHash=()=>{const m=location.hash.match(/^#slide-(\d+)$/);return m?clamp(Number(m[1])-1):0;};
 let current=fromHash();
 const routeDemo=document.getElementById('route-demo'),simplifyButton=document.getElementById('simplify');
-const coverVisual=document.querySelector('.cover-visual');
+const coverVisual=document.querySelector('.cover-logo-field');
 const detourReveal=document.querySelector('.detour-reveal');
 const detourTags=[...document.querySelectorAll('.detour-tag')];
 let routeTimers=[];
