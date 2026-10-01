@@ -7,20 +7,20 @@ const clamp=n=>Math.max(0,Math.min(slides.length-1,n));
 const fromHash=()=>{const m=location.hash.match(/^#slide-(\d+)$/);return m?clamp(Number(m[1])-1):0;};
 let current=fromHash();
 const routeDemo=document.getElementById('route-demo'),simplifyButton=document.getElementById('simplify');
-const coverVisual=document.querySelector('.cover-logo-field');
+const coverVisuals=[...document.querySelectorAll('.cover-logo-field')];
 const detourReveal=document.querySelector('.detour-reveal');
 const detourTags=[...document.querySelectorAll('.detour-tag')];
 let routeTimers=[];
 let routeFrame=0;
-if(coverVisual&&!reduced.matches&&window.matchMedia('(pointer:fine)').matches){
+if(coverVisuals.length&&!reduced.matches&&window.matchMedia('(pointer:fine)').matches){
   let targetX=0,targetY=0,currentX=0,currentY=0,coverFrame=0;
   const renderCover=()=>{
     currentX+=(targetX-currentX)*.07;
     currentY+=(targetY-currentY)*.07;
-    coverVisual.style.setProperty('--float-x',`${currentX}px`);
-    coverVisual.style.setProperty('--float-y',`${currentY}px`);
-    coverVisual.style.setProperty('--tilt-x',`${currentX*.12}deg`);
-    coverVisual.style.setProperty('--tilt-y',`${currentY*-.12}deg`);
+    coverVisuals.forEach(visual=>{
+      visual.style.setProperty('--float-x',`${currentX}px`);
+      visual.style.setProperty('--float-y',`${currentY}px`);
+    });
     if(Math.abs(targetX-currentX)>.05||Math.abs(targetY-currentY)>.05)coverFrame=requestAnimationFrame(renderCover);else coverFrame=0;
   };
   const moveCover=e=>{
