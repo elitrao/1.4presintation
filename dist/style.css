@@ -98,6 +98,8 @@ footer{position:fixed;z-index:5;bottom:0;left:0;width:100%;height:80px;display:f
 @media(prefers-reduced-motion:reduce){.closing-art,.finish-orbit,.finish-halo{animation:none}}
 
 /* Small brand marks surround the cover copy, with a quiet shared parallax. */
+.cover-logo-viewport{position:absolute;inset:0;overflow:clip;contain:strict;pointer-events:none;z-index:0}
+@media(max-width:760px){.cover h1{font-size:clamp(28px,9.6vw,56px)}}
 .cover-logo-field{position:absolute;inset:0;pointer-events:none;z-index:0;transform:translate3d(var(--float-x,0),var(--float-y,0),0);will-change:transform}
 .cover-logo-field img{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:auto;opacity:var(--alpha);transform:translate(-50%,-50%) rotate(var(--angle));animation:mark-float 8s ease-in-out infinite;animation-delay:var(--delay);filter:drop-shadow(0 8px 14px #0003)}
 @keyframes mark-float{50%{transform:translate(-50%,calc(-50% - 8px)) rotate(calc(var(--angle) + 4deg))}}
